@@ -21,7 +21,7 @@ See a collecting with live demos [here](https://huggingface.co/collections/laten
 You need CUDA and Python 3.10, Mac with an M1/M2/M3 chip or Intel Arc GPU
 
 `TIMEOUT`: limit user session timeout  
-`SAFETY_CHECKER`: disabled if you want NSFW filter off  
+`SAFETY_CHECKER`: disabled if you want NSFW filter off  (Currently Disabled for Img2Img ControlNet/Canny).
 `MAX_QUEUE_SIZE`: limit number of users on current app instance  
 `TORCH_COMPILE`: enable if you want to use torch compile for faster inference works well on A100 GPUs
 
@@ -33,20 +33,38 @@ python -m venv venv
 source venv/bin/activate
 pip3 install -r requirements.txt
 ```
+OR
+Run included "_Step_1_Install.bat"
 
-# LCM
-### Image to Image
+If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS.
 
 ```bash
-uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload
+openssl req -newkey rsa:4096 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
+uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload --log-level info --ssl-certfile=certificate.pem --ssl-keyfile=key.pem
 ```
+OR
+Run included "_Step_2_Optional_Create_SSL_Needed_for_Remote_access.bat"
 
+
+# LCM
 ### Image to Image ControlNet Canny
 
 Based pipeline from [taabata](https://github.com/taabata/LCM_Inpaint_Outpaint_Comfy)
 
 ```bash
 uvicorn "app-controlnet:app" --host 0.0.0.0 --port 7860 --reload
+```
+OR
+Run "_Step_3a_Start_RTLCM-With_SSL_ControlNet.bat" if you are using an SSL Cert.
+Run "_Step_3b_Start_RTLCM-Without_SSL_ControlNet.bat" if you are not using an SSL Cert.
+
+Img2Img w/ ControlNet is the only mode I've updated with "Capture Desktop" option. 
+
+
+### Image to Image
+
+```bash
+uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload
 ```
 
 ### Text to Image
@@ -81,12 +99,6 @@ uvicorn "app-txt2imglora:app" --host 0.0.0.0 --port 7860 --reload
 TIMEOUT=120 SAFETY_CHECKER=True MAX_QUEUE_SIZE=4 uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload
 ```
 
-If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS.
-
-```bash
-openssl req -newkey rsa:4096 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
-uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload --log-level info --ssl-certfile=certificate.pem --ssl-keyfile=key.pem
-```
 
 ## Docker
 
