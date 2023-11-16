@@ -39,6 +39,7 @@ OR
 
 Run included "_Step_1_Install.bat"
 
+## SSL (Optional)
 If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS. This requires OpenSSL to be installed on your system. It is only needed if you want to access the RT-LCM web UI remotely.  
 
 ```bash
@@ -63,7 +64,7 @@ Run "_Step_3a_Start_RTLCM-With_SSL_ControlNet.bat" if you are using an SSL Cert.
 
 Run "_Step_3b_Start_RTLCM-Without_SSL_ControlNet.bat" if you are not using an SSL Cert.
 
-Img2Img w/ ControlNet is the only mode I've updated with "Capture Desktop" option. 
+Img2Img w/ ControlNet is the only mode I've updated with "Capture Desktop" option at this point. 
 
 
 ### Image to Image
