@@ -56,6 +56,7 @@ uvicorn "app-controlnet:app" --host 0.0.0.0 --port 7860 --reload
 ```
 OR
 Run "_Step_3a_Start_RTLCM-With_SSL_ControlNet.bat" if you are using an SSL Cert.
+
 Run "_Step_3b_Start_RTLCM-Without_SSL_ControlNet.bat" if you are not using an SSL Cert.
 
 Img2Img w/ ControlNet is the only mode I've updated with "Capture Desktop" option. 
