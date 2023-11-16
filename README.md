@@ -39,7 +39,7 @@ OR
 
 Run included "_Step_1_Install.bat"
 
-If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS.
+If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS. This requires OpenSSL to be installed on your system. It is only needed if you want to access the RT-LCM web UI remotely.  
 
 ```bash
 openssl req -newkey rsa:4096 -nodes -keyout key.pem -x509 -days 365 -out certificate.pem
