@@ -10,11 +10,13 @@ suggested_hardware: a10g-small
 
 # Real-Time Latent Consistency Model
 
+# I've made several changes to the main branch for this Repo.
+
+1) I've added a Desktop Capture feature for Img2Img ControlNet/Canny.
+2) I've added several Windows Bat scripts to get you started more easily.
+
 This demo showcases [Latent Consistency Model (LCM)](https://huggingface.co/SimianLuo/LCM_Dreamshaper_v7) using [Diffusers](https://github.com/huggingface/diffusers/tree/main/examples/community#latent-consistency-pipeline) with a MJPEG stream server.
 
-You need a webcam to run this demo. 🤗
-
-See a collecting with live demos [here](https://huggingface.co/collections/latent-consistency/latent-consistency-model-demos-654e90c52adb0688a0acbe6f)
 
 ## Running Locally
 
@@ -34,6 +36,7 @@ source venv/bin/activate
 pip3 install -r requirements.txt
 ```
 OR
+
 Run included "_Step_1_Install.bat"
 
 If you're running locally and want to test it on Mobile Safari, the webserver needs to be served over HTTPS.
@@ -43,6 +46,7 @@ openssl req -newkey rsa:4096 -nodes -keyout key.pem -x509 -days 365 -out certifi
 uvicorn "app-img2img:app" --host 0.0.0.0 --port 7860 --reload --log-level info --ssl-certfile=certificate.pem --ssl-keyfile=key.pem
 ```
 OR
+
 Run included "_Step_2_Optional_Create_SSL_Needed_for_Remote_access.bat"
 
 
