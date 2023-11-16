@@ -255,6 +255,17 @@
                     console.log(err);
                 })
             , 5000);
+        document.getElementById('desktopCapture').addEventListener('click', async () => {
+            try {
+                const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+                const videoElement = document.querySelector('#webcam');
+                videoElement.srcObject = stream;
+                videoElement.play();
+            } catch (err) {
+                console.error('Error capturing desktop:', err);
+            }
+        });
+ 
     </script>
 </head>
 
@@ -407,6 +418,10 @@
             <button id="snap" disabled class="button ml-auto">
                 Snapshot
             </button>
+            <button id="desktopCapture" class="button">
+                Capture Desktop
+            </button>
+
         </div>
         <div class="relative rounded-lg border border-slate-300 overflow-hidden">
             <img id="player" class="w-full aspect-square rounded-lg"
