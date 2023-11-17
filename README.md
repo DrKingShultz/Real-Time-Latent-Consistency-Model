@@ -1,5 +1,5 @@
 ---
-title: Real-Time Latent Consistency Model Image-to-Image ControlNet
+title: Real-Time Latent Consistency Model Image-to-Image ControlNet with Desktop Capture
 emoji: 🖼️🖼️
 colorFrom: gray
 colorTo: indigo
@@ -8,7 +8,7 @@ pinned: false
 suggested_hardware: a10g-small
 ---
 
-# Real-Time Latent Consistency Model
+# Real-Time Latent Consistency Model with Desktop Capture
 
 # I've made several changes to the main branch for this Repo.
 
