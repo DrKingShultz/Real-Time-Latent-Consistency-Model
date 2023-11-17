@@ -14,6 +14,7 @@ suggested_hardware: a10g-small
 
 1) I've added a Desktop Capture feature for Img2Img ControlNet/Canny.
 2) I've added several Windows Bat scripts to get you started more easily.
+3) The port used in this fork is 7861. If you are not using SSL, the web ui will be http://127.0.0.1:7861. if you are using SSL, it will be https://yourIP:7861 (note the s in https). Also, your browser will warn you of a self signed cert, but this is required to enable capture in some browsers. 
 
 This demo showcases [Latent Consistency Model (LCM)](https://huggingface.co/SimianLuo/LCM_Dreamshaper_v7) using [Diffusers](https://github.com/huggingface/diffusers/tree/main/examples/community#latent-consistency-pipeline) with a MJPEG stream server.
 
