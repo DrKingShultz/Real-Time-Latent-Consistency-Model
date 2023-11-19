@@ -1,4 +1,4 @@
-@echo off
+@echo on
 
 REM Create a virtual environment if it doesn't exist
 if not exist ".\venv\" (
